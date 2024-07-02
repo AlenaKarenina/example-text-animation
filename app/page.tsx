@@ -1,15 +1,13 @@
-'use client'
-import lcs from './page.module.scss'
-import Text from '@/components/text/Text'
+import Link from 'next/link'
+import { LINKS_MOCKS } from './mocks/mocks'
 
 export default function Home() {
 
   return (
-    <div className={lcs.container}>
-      <Text />
-      <Text />
-      <Text />
-      <Text />
-    </div>
+    <main>
+      {LINKS_MOCKS.map(({title, href}, index) =>
+        <Link key={index} className='link' href={href}>{title}</Link>
+      )}
+    </main>
   )
 }
